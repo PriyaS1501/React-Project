@@ -1,0 +1,228 @@
+{
+  "Doctors": [
+    {
+      "id": 4,
+      "name": "Brijlata Singh",
+      "qualification": "MBBS, MS",
+      "speciality": "Consultant - General Ophthalmologist",
+      "experience": "10",
+      "about": "He is Consultant - General Ophthalmologist",
+      "email": "Brijlata22@gmail.com",
+      "contact": "8784321467",
+      "centre": "Navi Mumbai",
+      "OPDtimeAM": "1PM",
+      "OPDtimePM": "5PM",
+      "OPDdays": "Mon, Thu, Fri",
+      "gender": "male"
+    },
+    {
+      "id": 5,
+      "name": "Vijay Shah",
+      "qualification": "MBBS, MS",
+      "speciality": "Consultant - General Ophthalmologist",
+      "experience": "11",
+      "about": "He is Consultant - General Ophthalmologist",
+      "email": "vijay67@gmail.com",
+      "contact": "9988776655",
+      "centre": "Mumbai",
+      "OPDtimeAM": "10AM",
+      "OPDtimePM": "2PM",
+      "OPDdays": "Mon, Thu, Fri",
+      "gender": "male"
+    },
+    {
+      "id": 3,
+      "name": "Swapna Gandhe",
+      "qualification": "MBBS, DOMS",
+      "speciality": "Consultant - Phaco & General Ophthalmology",
+      "experience": "5",
+      "about": "She has performed 3000 SICS including topical SICS and 50 ECCE.\nShe also specializes in refractive surgeries like LASIK, PRK, Phakic IOL (ICL/IPCL), Multifocal IOL, toric IOL, Trifocal IOL",
+      "email": "swapna@ymail.com",
+      "contact": "8976777210",
+      "centre": "VASHI",
+      "OPDtimeAM": "9AM",
+      "OPDtimePM": "1PM",
+      "OPDdays": "Mon, Thu",
+      "gender": "female"
+    },
+    {
+      "id": 6,
+      "name": "Priyanka Sawant",
+      "qualification": "MBBS, DOMS",
+      "speciality": "Consultant - Vitreo-Retina & Uvea Surgeon",
+      "experience": "05",
+      "about": "hii",
+      "email": "babarpriyanka323@gmail.com",
+      "contact": "8976777210",
+      "centre": "Thane",
+      "OPDtimeAM": "3PM",
+      "OPDtimePM": "6PM",
+      "OPDdays": "Mon, Tue, Wed",
+      "gender": "Female"
+    },
+    {
+      "id": 7,
+      "name": "Prasad Kamat",
+      "qualification": "MBBS, MS, FMRF",
+      "speciality": "Consultant - Vitreo-Retina & Uvea surgeon",
+      "experience": "7",
+      "about": "Worked as Senior Retina Consultant at Contacare Eye Hospitals ( 2016 to 2018)\nExperience of more than 3000 Retina surgeries and more than 10,000 Retina procedures (lasers, intravitreal injections)\nPresented many papers and given talks in BOA, Maharashtra Ophthalmic Association annual conferences",
+      "email": "prasad@gmail.com",
+      "contact": "8765432190",
+      "centre": "Thane",
+      "OPDtimeAM": "10 am",
+      "OPDtimePM": "7 pm",
+      "OPDdays": "Tue, Thu, Sat",
+      "gender": "Male"
+    },
+    {
+      "id": 8,
+      "name": "Priyanka Babar",
+      "qualification": "MBBS",
+      "speciality": "Surgoen",
+      "experience": "05",
+      "about": "Surgoan",
+      "email": "babar@gmail.com",
+      "contact": "9876543210",
+      "centre": "Thane",
+      "OPDtimeAM": "3PM",
+      "OPDtimePM": "6PM",
+      "OPDdays": "Mon, Tue, Wed",
+      "gender": "Female"
+    }
+  ],
+  "Users": [
+    {
+      "id": 204,
+      "username": "Admin",
+      "password": "Admin@123$"
+    }
+  ],
+  "Centres": [
+    {
+      "id": 1,
+      "name": "Pune",
+      "description": "Nulla consequat massa quis enim. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. ",
+      "address": "Your Road Name, Your City, Pune-412101",
+      "cemail": "pune@gmail.com",
+      "ccontact": "8866007766"
+    },
+    {
+      "id": 2,
+      "name": "Mumbai",
+      "description": "Nulla consequat massa quis enim. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.",
+      "address": "Your Road Name, Your City, Mumbai-4000075",
+      "cemail": "mumbai@gmail.com",
+      "ccontact": "7799007766"
+    },
+    {
+      "id": 3,
+      "name": "Navi Mumbai",
+      "description": "Nulla consequat massa quis enim. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.",
+      "address": "Above Apna Bazar, sector 9A, Vashi, Navi Mumbai - 400 703",
+      "cemail": "navimumbai@gmail.com",
+      "ccontact": "8899007886"
+    },
+    {
+      "id": 4,
+      "name": "Kolhapur",
+      "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede",
+      "address": "Ring Road, Niramaya Hospital, Ichalkaranji, Kolhapur, Maharashtra 416115",
+      "cemail": "kolhapur@gmail.com",
+      "ccontact": "9999999999"
+    },
+    {
+      "name": "Sangli",
+      "description": "sangali centre",
+      "address": "Miraj Road, Vishrambag, Opposite Police Headquarters, Sangli, Maharashtra - 416415 ",
+      "cemail": "sangali@gmail.com",
+      "ccontact": "8877665544",
+      "id": 5
+    }
+  ],
+  "Appointments": [
+    {
+      "id": 222,
+      "fname": "Priyanka Sawant",
+      "emailid": "priyanka@gmail.com",
+      "acontact": "1111111111",
+      "doa": "11/01/2000",
+      "gender": "female",
+      "preferredcentre": "mumbai",
+      "contactway": "phone",
+      "comment": "Nulla consequat massa quis enim. Cum sociis"
+    },
+    {
+      "fname": "Swapnil Babar",
+      "emailid": "babar@gmail.com",
+      "acontact": "1234567890",
+      "doa": "2023-05-18",
+      "city": "Pune",
+      "gender": "male",
+      "contactway": "Email",
+      "preferredcentre": "Mumbai",
+      "comment": "hiii",
+      "id": 224
+    },
+    {
+      "fname": "Sadhna Suryavanshi",
+      "emailid": "suryavanshi@gmail.com",
+      "acontact": "1234567890",
+      "doa": "2023-05-23",
+      "city": "Mumbai",
+      "gender": "male",
+      "contactway": "Email",
+      "preferredcentre": "Mumbai",
+      "comment": "hiii",
+      "id": 225
+    },
+    {
+      "fname": "Rahi Suryavanshi",
+      "emailid": "rahi@gmail.com",
+      "acontact": "9876543210",
+      "doa": "2023-05-28",
+      "city": "mumbai",
+      "gender": "female",
+      "contactway": "Email",
+      "preferredcentre": "Thane",
+      "comment": "Hiii",
+      "id": 226
+    },
+    {
+      "fname": "Jyoti Kale",
+      "emailid": "jyoti@gmail.com",
+      "acontact": "9898989898",
+      "doa": "2023-05-26",
+      "city": "Pune",
+      "gender": "female",
+      "contactway": "Email",
+      "preferredcentre": "Mumbai",
+      "comment": "Hello ",
+      "id": 227
+    },
+    {
+      "fname": "Tanvi Gole",
+      "emailid": "tanvi@gmail.com",
+      "acontact": "8877665544",
+      "doa": "2023-05-27",
+      "city": "mumbai",
+      "gender": "female",
+      "contactway": "Email",
+      "preferredcentre": "Mumbai",
+      "comment": "hii",
+      "id": 228
+    },
+    {
+      "fname": "Priyanka babar",
+      "emailid": "test111@test.com",
+      "acontact": "1111111111",
+      "doa": "2023-07-13",
+      "city": "Pune",
+      "gender": "female",
+      "contactway": "Email",
+      "preferredcentre": "Thane",
+      "comment": "hii",
+      "id": 229
+    }
+  ]
+}

@@ -1,0 +1,301 @@
+
+@font-face {
+    font-family: 'MuseoSans-500';
+    src: url('../fonts/MuseoSans-500.woff2') format('woff2'),
+         url('../fonts/MuseoSans-500.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+::placeholder {
+    color: #ccc !important;
+}
+
+html {
+    padding: 0;
+    margin: 0;
+    font-family: 'MuseoSans-500' !important;
+}
+
+body {
+    font-family: 'MuseoSans-500' !important;
+}
+
+#header-logo {
+    text-align: center;
+    cursor: pointer;
+}
+
+#header-logo img {
+    width: 70%;
+}
+
+.top-header {
+    padding: 10px 0;
+}
+
+.breadcrumb {
+    text-align: center;
+}
+
+.breadcrumb h2 {
+    margin: 0 auto;
+    font-size: 40px;
+}
+
+.gray-bg {
+    background-color: #f1f1f1;
+}
+
+footer {
+    background-color: #ccc;
+}
+
+footer ul li a {
+    text-decoration: none;
+    color: #000;
+}
+
+.social {
+    padding: 0;
+    margin-top: 0;
+}
+
+.social li {
+    display: inline-block;
+}
+
+.social .fa {
+    font-size: 25px;
+    padding: 5px;
+}
+
+.copyright {
+    text-align: right;
+    background: #28515c;
+}
+
+.copyright a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.page-not-found {
+    text-align: center;
+}
+
+.page-not-found h2 {
+    font-size: 35px;
+}
+
+.doctors {
+    text-align: center;
+    box-shadow: 5px 5px 0 0px #dfdfdf;
+    padding: 25px 5px;
+    height: 445px;
+    width: 29%;
+    margin: 0 2% 2% 2%;
+    float: left;
+}
+
+.doctors h3 {
+    color: #606060;
+}
+
+.education {
+    margin: 25px 0;
+}
+
+.education::before {
+    height: 2px;
+    display: block;
+    width: 200px;
+    background: #bcbdc1;
+    content: '';
+    margin: 0 auto 10px auto;
+}
+
+.doctors ul {
+    margin: 25px 0 0 0;
+    padding: 0;
+}
+
+.doctors li {
+    display: block;
+    margin: 0 0 10px 0;
+}
+
+.doctors li a {
+    background: #008798;
+    padding: 5px 10px;
+    color: #fff;
+    font-size: 16px;
+    text-transform: uppercase;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.modal1-content {
+    text-align: left;
+    padding: 20px 40px;
+    border-radius: 60px 0 60px 0;
+    
+    border: 0;
+}
+
+.modal1-header {
+    padding: 0;
+    border: 0;
+}
+
+.banner-btm {
+    text-align: center;
+}
+
+.find-doctor {
+    background: #008798;
+    padding: 25px;
+    border-radius: 60px 0 0 0;
+}
+
+.banner-btm img {
+    margin: 0 0 25px 0;
+}
+
+.banner-btm h3 {
+    text-transform: uppercase;
+    margin: 0;
+    color: #fff;
+    text-decoration: underline;
+}
+
+.banner-btm p {
+    color: #fff;
+}
+
+.banner-btm a {
+    text-decoration: none;
+}
+
+.centers {
+    padding: 25px;
+    background-image: linear-gradient(to right, rgba(243, 115, 120, 1), rgba(233, 56, 62, 1));
+}
+
+.book-appointment {
+    background: #008798;
+    padding: 25px;
+    border-radius: 0 0 60px 0;
+}
+
+.banner-btm .col-md-4 {
+    display: inline-block;
+}
+
+.doctor-list {
+    /* height: 300px; */
+    overflow-y: scroll;
+}
+
+.search {
+    float: right;
+    width: 40%;
+}
+
+.login-form {
+    border: 2px solid #2994b2;
+    padding: 10px;
+    width: 50%;
+    margin: auto;
+    border-radius: 15px;
+    box-shadow: 10px 5px 10px 5px #ccc;
+}
+
+.nav-link {
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.sign-in {
+    padding: 15px 0;
+    float: right;
+}
+
+.sign-out p {
+    margin: 0;
+}
+
+.sign-out {
+    float: right;
+    text-align: right;
+}
+
+.heading-lf {
+    padding: 10px 20px;
+    background-color: transparent !important;
+    margin: 10px 0;
+}
+
+.heading-lf h3 {
+    margin: 0;
+    text-transform: uppercase;
+    color: #008798;
+    font-size: 20px;
+
+}
+
+.loc1 {
+    margin: 0;
+    padding: 0;
+}
+
+.loc1 li {
+    display: block;
+    margin: 0 0 10px 0;
+    font-size: 18px;
+}
+
+.loc1 li i {
+    width: 40px;
+    font-size: 22px;
+    text-align: center;
+}
+
+.loc1 li a {
+    font-size: 18px;
+    text-decoration: none;
+    color: #212529;
+}
+
+.num {
+    width: 49%;
+    float: left;
+    margin: 0 1% 0 0;
+}
+
+.nav-link:focus,
+.nav-link:hover,
+.nav-link:active {
+    color: rgb(41 148 178);
+}
+.btn.btn-primary a {
+    color: #fff;
+    text-decoration: none;
+}
+i {
+    margin: 0 5px;
+}
+a{
+    text-decoration: none;
+}
+.btn.btn-secondary a {
+    color: #fff;
+}
+.btn.btn-outline-success a {
+    color: #000;
+}
+input[type="radio"] {
+    margin: 5px;
+}
