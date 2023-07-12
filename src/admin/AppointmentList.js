@@ -17,6 +17,7 @@ class AppointmentList extends Component {
             emailid: '',
             acontact: '',
             doa: '',
+            city: '',
             gender: '',
             preferredcentre: '',
             contactway: '',
@@ -24,10 +25,10 @@ class AppointmentList extends Component {
         }
     }
     fetchData = () => {
-        axios.get("http://localhost:8484/Appointments")
+        axios.get("https://dark-pink-quail-hose.cyclic.app/Appointments/")
             .then((res) => {
-                console.log(res.data)
-                this.setState({ Appointments: res.data })
+                // console.log(res.data)
+                this.setState({ Appointments: res.data.data })
             })
             .catch((err) => {
                 console.log(err)
@@ -36,12 +37,25 @@ class AppointmentList extends Component {
     componentDidMount() {
         this.fetchData();
     }
+    getId = (id) => {
+        //  console.log("Get data for id:" + id)
+        axios.get(`https://dark-pink-quail-hose.cyclic.app/Appointments/${id}`)
+            .then((res) => {
+                // console.log(res.data)
+                const { id, fname, emailid, acontact, doa, city, gender, preferredcentre, contactway, comment } = res.data.data
+                this.setState({ id, fname, emailid, acontact, doa, city, gender, preferredcentre, contactway, comment })
+            })
+            .catch((err) => {
+                console.log("Error:" + err)
+            })
+
+    }
     deleteRecord = (id) => {
 
         if (window.confirm('Are you sure you want to delete the record with Appointment id ' + id)) {
-            axios.delete(`http://localhost:8484/Appointments/${id}`)
+            axios.delete(`https://dark-pink-quail-hose.cyclic.app/Appointments/${id}`)
                 .then(() => {
-                 //   window.alert('Record of Appointment id ' + id + ' deleted sucessfully')
+                    //   window.alert('Record of Appointment id ' + id + ' deleted sucessfully')
                     this.fetchData()
                 })
                 .catch((err) => {
@@ -109,8 +123,8 @@ class AppointmentList extends Component {
                                             <tbody>
                                                 {
                                                     this.state.Appointments.map((data, index) => {
-                                                        return <tr key={data.id}>
-                                                            <td>{data.id}</td>
+                                                        return <tr key={data._id}>
+                                                            <td>{(data._id.length > 5) ? (data._id.slice(21, 24)) : (data._id)}</td>
                                                             <td>{data.fname}</td>
                                                             <td>{data.emailid}</td>
                                                             <td>{data.acontact}</td>
@@ -119,9 +133,9 @@ class AppointmentList extends Component {
                                                             <td>{data.gender} </td>
                                                             <td>{data.preferredcentre}</td>
                                                             <td>{data.contactway}</td>
-                                                            <td>{(data.comment.length>10)?(data.comment.slice(0,10))+'...':(data.comment)}</td>
-
-                                                            <td><button className="btn btn-outline-danger btn-sm" onClick={() => { this.deleteRecord(data.id) }}>
+                                                           {/* <td>{(data.comment.length > 10) ? (data.comment.slice(0, 10)) + '...' : (data.comment)}</td> */}
+                                                            <td>{data.comment}</td>
+                                                            <td><button className="btn btn-outline-danger btn-sm" onClick={() => { this.deleteRecord(data._id) }}>
                                                                 <i className="fa fa-trash-o"></i></button></td>
                                                         </tr>
                                                     })

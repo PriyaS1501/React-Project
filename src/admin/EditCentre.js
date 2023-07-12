@@ -9,7 +9,7 @@ class EditCentre extends Component {
     super(props)
     this.state = {
       Centres: [],
-      id: '',
+      _id: '',
       name: '',
       description: '',
       address: '',
@@ -17,11 +17,11 @@ class EditCentre extends Component {
       ccontact: ''
     }
   }
-  fetchData = (id) => {
-    axios.get(`http://localhost:8484/Centres/${id}`)
+  fetchData = (_id) => {
+    axios.get(`https://dark-pink-quail-hose.cyclic.app/Centres/${_id}`)
       .then((res) => {
         //  console.log(res.data)
-        this.setState({ Centres: res.data })
+        this.setState({ Centres: res.data.data })
       })
       .catch((err) => {
         console.log(err)
@@ -30,13 +30,13 @@ class EditCentre extends Component {
 
   componentDidMount() {
     let url = window.location.pathname;
-    let id = url.substring(url.lastIndexOf('/') + 1);
-   // console.log(id)
-     axios.get(`http://localhost:8484/Centres/${id}`)
+    let _id = url.substring(url.lastIndexOf('/') + 1);
+   // console.log(_id)
+     axios.get(`https://dark-pink-quail-hose.cyclic.app/Centres/${_id}`)
       .then((res) => {
         //console.log(res.data)
-        const { id, name, description, address, cemail, ccontact } = res.data
-        this.setState({ id, name, description, address, cemail, ccontact })
+        const { _id, name, description, address, cemail, ccontact } = res.data.data
+        this.setState({ _id, name, description, address, cemail, ccontact })
       })
       .catch((err) => {
         console.log("Error:" + err)
@@ -46,16 +46,16 @@ class EditCentre extends Component {
   editCentre = (e) => {
     console.log("Put Request")
     const centreObj = {
-      id: this.state.id,
+      _id: this.state._id,
       name: this.state.name,
       description: this.state.description,
       address: this.state.address,
       cemail: this.state.cemail,
       ccontact: this.state.ccontact
     }
-    axios.put(`http://localhost:8484/Centres/${this.state.id}`, centreObj)
+    axios.put(`https://dark-pink-quail-hose.cyclic.app/Centres/${this.state._id}`, centreObj)
       .then(() => {
-        window.alert("Record of id " + this.state.id +" updated sucessfully")
+        window.alert("Record of centre " + this.state.name +" updated sucessfully")
         window.location="/admin/centreslist"
 
       })
@@ -120,7 +120,7 @@ class EditCentre extends Component {
                       </div>
 
                       <div className="col-md-5 m-2">
-                        <label > Email Id :</label>
+                        <label > Email id :</label>
                         <input type="email" name="cemail" value={this.state.cemail} className="form-control"  required onChange={(e) => this.inputChangeHandler(e)}></input>
                        
                       </div >

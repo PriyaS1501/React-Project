@@ -15,8 +15,11 @@ class AddCentre extends Component {
     }
   }
   inputChangeHandler = (e) => {
-    const { name, cemail, ccontact } = this.state
-    this.setState({ [e.target.name]: e.target.value })
+   const { name, cemail, ccontact } = this.state
+   this.setState({ [e.target.name]: e.target.value })
+  //  const { value, name } = e.target;
+  //  this.setState({ [name]: value })
+
     var regExName = "^[A-Za-z]{3,20}";
     var regExEmail = "^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$";
     var regExContact = '[0-9]{10}';
@@ -27,7 +30,7 @@ class AddCentre extends Component {
       this.setState({ fperror: "" })
     }
     if (!name.match(regExName)) {
-      this.setState({ fperror: " Centre name must be More than 3 letters." })
+      this.setState({ fperror: " Centre name must be More than 3 letters only." })
       e.preventDefault();
       return false;
     }
@@ -55,7 +58,7 @@ class AddCentre extends Component {
   addCentre = (e) => {
 
     const { name, description, address, cemail, ccontact } = this.state
-    const centreObj = {
+    const centreObject = {
 
       name: name,
       description: description,
@@ -93,10 +96,10 @@ class AddCentre extends Component {
       e.preventDefault();
       return false;
     }
-    axios.post("http://localhost:8484/Centres/", centreObj)
+    axios.post("https://dark-pink-quail-hose.cyclic.app/Centres", centreObject)
       .then(() => {
-        window.alert("Centre Data added sucessfully")
-        window.location.replace('/admin/centreslist');
+        window.alert("New Centre added sucessfully")
+        window.location ='/admin/centreslist';
       })
       .catch((e) => {
         console.log("Error:" + e)
@@ -125,8 +128,8 @@ class AddCentre extends Component {
               <div className="row">
                 <div className="col-md-12">
 
-                  <button className="btn btn-secondary btn-sm "> 
-                  <Link to="/admin/centreslist"><i className="fa fa-plus"></i> View Centres List</Link>
+                  <button className="btn btn-secondary btn-sm ">
+                    <Link to="/admin/centreslist"><i className="fa fa-plus"></i> View Centres List</Link>
                   </button>
                 </div>
               </div>

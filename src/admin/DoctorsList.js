@@ -10,7 +10,7 @@ class DoctorsList extends Component {
         super(props)
         this.state = {
             Doctors: [],
-            id: '',
+            _id: '',
             name: '',
             qualification: '',
             speciality: '',
@@ -26,23 +26,23 @@ class DoctorsList extends Component {
         }
     }
     fetchData = () => {
-        axios.get("http://localhost:8484/Doctors")
+        axios.get("https://dark-pink-quail-hose.cyclic.app/Doctors")
             .then((res) => {
                 console.log(res.data)
-                this.setState({ Doctors: res.data })
+                this.setState({ Doctors: res.data.data })
             })
             .catch((err) => {
                 console.log(err)
             })
     }
-    getId = (id) => {
-        console.log("Get data for id:" + id)
-        axios.get(`http://localhost:8484/Doctors/${id}`)
+    get_id = (_id) => {
+       //  console.log("Get data for _id:" + _id)
+        axios.get(`https://dark-pink-quail-hose.cyclic.app/Doctors/${_id}`)
             .then((res) => {
                 // console.log(res.data)
 
-                const { id, name, qualification, speciality, experience, about, email, contact, centre, OPDtimeAM, OPDtimePM, OPDdays, gender } = res.data
-                this.setState({ id, name, qualification, speciality, experience, about, email, contact, centre, OPDtimeAM, OPDtimePM, OPDdays, gender })
+                const { _id, name, qualification, speciality, experience, about, email, contact, centre, OPDtimeAM, OPDtimePM, OPDdays, gender } = res.data.data
+                this.setState({ _id, name, qualification, speciality, experience, about, email, contact, centre, OPDtimeAM, OPDtimePM, OPDdays, gender })
             })
             .catch((err) => {
                 console.log("Error:" + err)
@@ -52,12 +52,12 @@ class DoctorsList extends Component {
     componentDidMount() {
         this.fetchData();
     }
-    deleteRecord = (id) => {
+    deleteRecord = (_id) => {
 
-        if (window.confirm('Are you sure you want to delete the record with Doctor id ' + id)) {
-            axios.delete(`http://localhost:8484/Doctors/${id}`)
+        if (window.confirm('Are you sure you want to delete the record of Doctor  ' + _id)) {
+            axios.delete(`https://dark-pink-quail-hose.cyclic.app/Doctors/${_id}`)
                 .then(() => {
-                    // window.alert('Record of Doctor id ' + id + ' deleted sucessfully')
+                    // window.alert('Record of Doctor _id ' + _id + ' deleted sucessfully')
                     this.fetchData()
                 })
                 .catch((err) => {
@@ -110,7 +110,7 @@ class DoctorsList extends Component {
                                         <Table striped bordered hover>
                                             <thead>
                                                 <tr>
-                                                    <th>Id</th>
+                                                    <th>id</th>
                                                     <th>Name</th>
                                                     <th>Qualification</th>
                                                     <th>Speciality</th>
@@ -128,8 +128,8 @@ class DoctorsList extends Component {
                                             <tbody>
                                                 {
                                                     this.state.Doctors.map((data) => {
-                                                        return <tr key={data.id}>
-                                                            <td>{data.id}</td>
+                                                        return <tr key={data._id}>
+                                                            <td>{(data._id.length>5) ? (data._id.slice(21,24)) : (data._id)}</td>
                                                             <td>{data.name}</td>
                                                             <td>{data.qualification}</td>
                                                             <td>{data.speciality}</td>
@@ -142,8 +142,8 @@ class DoctorsList extends Component {
                                                             <td>{data.OPDdays}</td>
                                                             <td>{data.gender}</td>
                                                             <td><button className="btn btn-outline-success btn-sm" >
-                                                                <Link to={`/admin/editdoctor/${data.id}`}>  <i className="fa fa-pencil-square-o"></i></Link></button></td>
-                                                            <td><button className="btn btn-outline-danger btn-sm" onClick={() => { this.deleteRecord(data.id) }}>
+                                                                <Link to={`/admin/editdoctor/${data._id}`}>  <i className="fa fa-pencil-square-o"></i></Link></button></td>
+                                                            <td><button className="btn btn-outline-danger btn-sm" onClick={() => { this.deleteRecord(data._id) }}>
                                                                 <i className="fa fa-trash-o"></i></button></td>
                                                         </tr>
                                                     })

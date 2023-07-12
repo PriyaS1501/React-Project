@@ -23,10 +23,10 @@ class CentresList extends Component {
     }
 //fetch data
     fetchData = () => {
-        axios.get("http://localhost:8484/Centres")
+        axios.get("https://dark-pink-quail-hose.cyclic.app/Centres")
             .then((res) => {
                 //  console.log(res.data)
-                this.setState({ Centres: res.data })
+                this.setState({ Centres: res.data.data })
             })
             .catch((err) => {
                 console.log(err)
@@ -37,10 +37,10 @@ class CentresList extends Component {
     }
     getId = (id) => {
         console.log("Get data for id:" + id)
-        axios.get(`http://localhost:8484/Centres/${id}`)
+        axios.get(`https://dark-pink-quail-hose.cyclic.app/Centres/${id}`)
             .then((res) => {
                 // console.log(res.data)
-                const { id, name, description, address, cemail, ccontact } = res.data
+                const { id, name, description, address, cemail, ccontact } = res.data.data
                 this.setState({ id, name, description, address, cemail, ccontact })
             })
             .catch((err) => {
@@ -52,7 +52,7 @@ class CentresList extends Component {
     deleteRecord = (id) => {
 
         if (window.confirm('Are you sure you want to delete the record with Centre id ' + id)) {
-            axios.delete(`http://localhost:8484/Centres/${id}`)
+            axios.delete(`https://dark-pink-quail-hose.cyclic.app/Centres/${id}`)
                 .then(() => {
                     // window.alert('Record of Centre id ' + id + ' deleted sucessfully')
                     this.fetchData()
@@ -120,16 +120,16 @@ class CentresList extends Component {
                                             <tbody>
                                                 {
                                                     this.state.Centres.map((data) => {
-                                                        return <tr key={data.id}>
-                                                            <td>{data.id}</td>
+                                                        return <tr key={data._id}>
+                                                            <td>{(data._id.length>5) ? (data._id.slice(21,24))  :(data._id)}</td>
                                                             <td>{data.name}</td>
                                                             <td>{(data.description.length > 15) ? (data.description.slice(0, 15)) + '...' : (data.description)}</td>
                                                             <td>{data.address}</td>
                                                             <td>{data.cemail}</td>
                                                             <td>{data.ccontact} </td>
                                                             <td><button className="btn btn-outline-success btn-sm" >
-                                                                <Link to={`/admin/editcentre/${data.id}`}>  <i className="fa fa-pencil-square-o"></i></Link></button></td>
-                                                            <td><button className="btn btn-outline-danger btn-sm" onClick={() => { this.deleteRecord(data.id) }}>
+                                                                <Link to={`/admin/editcentre/${data._id}`}>  <i className="fa fa-pencil-square-o"></i></Link></button></td>
+                                                            <td><button className="btn btn-outline-danger btn-sm" onClick={() => { this.deleteRecord(data._id) }}>
                                                                 <i className="fa fa-trash-o"></i></button></td>
                                                         </tr>
                                                     })

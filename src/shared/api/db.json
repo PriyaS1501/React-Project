@@ -44,51 +44,6 @@
       "OPDtimePM": "1PM",
       "OPDdays": "Mon, Thu",
       "gender": "female"
-    },
-    {
-      "id": 6,
-      "name": "Priyanka Sawant",
-      "qualification": "MBBS, DOMS",
-      "speciality": "Consultant - Vitreo-Retina & Uvea Surgeon",
-      "experience": "05",
-      "about": "hii",
-      "email": "babarpriyanka323@gmail.com",
-      "contact": "8976777210",
-      "centre": "Thane",
-      "OPDtimeAM": "3PM",
-      "OPDtimePM": "6PM",
-      "OPDdays": "Mon, Tue, Wed",
-      "gender": "Female"
-    },
-    {
-      "id": 7,
-      "name": "Prasad Kamat",
-      "qualification": "MBBS, MS, FMRF",
-      "speciality": "Consultant - Vitreo-Retina & Uvea surgeon",
-      "experience": "7",
-      "about": "Worked as Senior Retina Consultant at Contacare Eye Hospitals ( 2016 to 2018)\nExperience of more than 3000 Retina surgeries and more than 10,000 Retina procedures (lasers, intravitreal injections)\nPresented many papers and given talks in BOA, Maharashtra Ophthalmic Association annual conferences",
-      "email": "prasad@gmail.com",
-      "contact": "8765432190",
-      "centre": "Thane",
-      "OPDtimeAM": "10 am",
-      "OPDtimePM": "7 pm",
-      "OPDdays": "Tue, Thu, Sat",
-      "gender": "Male"
-    },
-    {
-      "id": 8,
-      "name": "Priyanka Babar",
-      "qualification": "MBBS",
-      "speciality": "Surgoen",
-      "experience": "05",
-      "about": "Surgoan",
-      "email": "babar@gmail.com",
-      "contact": "9876543210",
-      "centre": "Thane",
-      "OPDtimeAM": "3PM",
-      "OPDtimePM": "6PM",
-      "OPDdays": "Mon, Tue, Wed",
-      "gender": "Female"
     }
   ],
   "Users": [
@@ -138,6 +93,15 @@
       "cemail": "sangali@gmail.com",
       "ccontact": "8877665544",
       "id": 5
+    },
+   
+    {
+      "name": "Ratnagiri",
+      "description": "ratnagiri centre",
+      "address": "9, Shop No. 3/4/5 Shantadurga Sankul Main Road, Salvi Stop, Ratnagiri, Maharashtra 415612",
+      "cemail": "iec1009@infigoeye.com",
+      "ccontact": "+91 93727 66504",
+      "id": 7
     }
   ],
   "Appointments": [

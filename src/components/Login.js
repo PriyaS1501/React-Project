@@ -13,7 +13,7 @@ export class Login extends Component {
     }
   }
   fetchData = () => {
-    axios.get("http://localhost:8484/Users")
+    axios.get("https://dark-pink-quail-hose.cyclic.app/Users")
       .then((res) => {
         console.log(res.data)
         this.setState({ Users: res.data })

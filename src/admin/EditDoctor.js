@@ -10,7 +10,7 @@ export class EditDoctor extends Component {
 
     this.state = {
       Doctors: [],
-      id: '',
+      _id: '',
       name: '',
       qualification: '',
       speciality: '',
@@ -25,11 +25,11 @@ export class EditDoctor extends Component {
       gender: ''
     }
   }
-  fetchData = (id) => {
-    axios.get(`http://localhost:8484/Doctors/${id}`)
+  fetchData = (_id) => {
+    axios.get(`https://dark-pink-quail-hose.cyclic.app/Doctors/${_id}`)
       .then((res) => {
         //  console.log(res.data)
-        this.setState({ Centres: res.data })
+        this.setState({ Doctors: res.data.data })
       })
       .catch((err) => {
         console.log(err)
@@ -38,13 +38,13 @@ export class EditDoctor extends Component {
 
   componentDidMount() {
     let url = window.location.pathname;
-    let id = url.substring(url.lastIndexOf('/') + 1);
-    // console.log(id)
-    axios.get(`http://localhost:8484/Doctors/${id}`)
+    let _id = url.substring(url.lastIndexOf('/') + 1);
+    // console.log(_id)
+    axios.get(`https://dark-pink-quail-hose.cyclic.app/Doctors/${_id}`)
       .then((res) => {
         //console.log(res.data)
-        const { id, name, qualification, speciality, experience, about, email, contact, centre, OPDtimeAM, OPDtimePM, OPDdays, gender } = res.data
-        this.setState({ id, name, qualification, speciality, experience, about, email, contact, centre, OPDtimeAM, OPDtimePM, OPDdays, gender })
+        const { _id, name, qualification, speciality, experience, about, email, contact, centre, OPDtimeAM, OPDtimePM, OPDdays, gender } = res.data.data
+        this.setState({ _id, name, qualification, speciality, experience, about, email, contact, centre, OPDtimeAM, OPDtimePM, OPDdays, gender })
       })
       .catch((err) => {
         console.log("Error:" + err)
@@ -54,7 +54,7 @@ export class EditDoctor extends Component {
   editDoctor = (e) => {
     console.log("Put Request")
     const doctorObj = {
-      id: this.state.id,
+      _id: this.state._id,
       name: this.state.name,
       qualification: this.state.qualification,
       speciality: this.state.speciality,
@@ -68,9 +68,9 @@ export class EditDoctor extends Component {
       OPDdays: this.state.OPDdays,
       gender: this.state.gender
     }
-    axios.put(`http://localhost:8484/Doctors/${this.state.id}`, doctorObj)
+    axios.put(`https://dark-pink-quail-hose.cyclic.app/Doctors/${this.state._id}`, doctorObj)
       .then(() => {
-        window.alert("Record of id " + this.state.id + " updated sucessfully")
+        window.alert("Record of Doctor " + this.state.name + " updated sucessfully")
         window.location = "/admin/doctorslist"
 
       })
@@ -149,7 +149,7 @@ export class EditDoctor extends Component {
 
 
                       <div class="col-md-5 m-2">
-                        <label for=""> Email Id :</label>
+                        <label for=""> Email _id :</label>
                         <input type="email" name="email" value={this.state.email} class="form-control" required onChange={(e) => this.inputChangeHandler(e)}></input>
                       
 

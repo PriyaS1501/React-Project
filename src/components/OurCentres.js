@@ -20,10 +20,11 @@ class OurCentres extends Component {
   }
 
   fetchData = () => {
-    axios.get("http://localhost:8484/Centres")
+    axios.get("https://dark-pink-quail-hose.cyclic.app/Centres")
       .then((res) => {
-        console.log(res.data)
-        this.setState({ Centres: res.data })
+       // console.log(res.data)
+        
+        this.setState({ Centres: res.data.data })
       })
       .catch((err) => {
         console.log(err)
@@ -35,6 +36,7 @@ class OurCentres extends Component {
 
 
   render() {
+    
     return (
       <div>
         <section>
@@ -53,16 +55,16 @@ class OurCentres extends Component {
                 <div className="col-md-12">
                   <Accordion >
                     {
-                      this.state.Centres.map((data, index) => {
-                        return <Accordion.Item eventKey={data.id} >
-                          <Accordion.Header>{data.name}</Accordion.Header>
+                      this.state.Centres.map((data1, index) => {
+                        return <Accordion.Item eventKey={data1.id} >
+                          <Accordion.Header>{data1.name}</Accordion.Header>
                           <Accordion.Body>
                             <div className="location">
-                              <p>{data.description}</p>
+                              <p>{data1.description}</p>
                               <ul className="loc1">
-                                <li><i className="fa fa-map-marker"></i> {data.address}</li>
-                                <li><i className="fa fa-envelope-o"></i> {data.cemail}</li>
-                                <li><i className="fa fa-phone"></i>{data.ccontact} </li>
+                                <li><i className="fa fa-map-marker"></i> {data1.address}</li>
+                                <li><i className="fa fa-envelope-o"></i> {data1.cemail}</li>
+                                <li><i className="fa fa-phone"></i>{data1.ccontact} </li>
                               </ul>
                             </div>
                           </Accordion.Body>

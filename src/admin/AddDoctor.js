@@ -3,22 +3,22 @@ import axios from 'axios'
 import '../assets/css/style.css'
 import { Link } from 'react-router-dom'
 
-export class AddDoctor extends Component {
+class AddDoctor extends Component {
   constructor(props) {
     super(props)
     this.state = {
       name: '',
+      email: '',
+      contact: '',
       qualification: '',
       speciality: '',
       experience: '',
-      about: '',
-      email: '',
-      contact: '',
       centre: '',
       OPDtimeAM: '',
       OPDtimePM: '',
       OPDdays: '',
-      gender: ''
+      gender: '',
+      about: '',
     }
   }
 
@@ -74,21 +74,21 @@ export class AddDoctor extends Component {
   }
   addDoctor = (e) => {
     //console.log("add data")
-    const { name, qualification, speciality, experience, about, email, contact, centre, OPDtimeAM, OPDtimePM, OPDdays, gender } = this.state
+    const { name, email, contact, qualification, speciality, experience, centre, OPDtimeAM, OPDtimePM, OPDdays, gender, about } = this.state
     const doctorObj = {
-    
+
       name: name,
+      email: email,
+      contact: contact,
       qualification: qualification,
       speciality: speciality,
       experience: experience,
-      about: about,
-      email: email,
-      contact: contact,
       centre: centre,
       OPDtimeAM: OPDtimeAM,
       OPDtimePM: OPDtimePM,
       OPDdays: OPDdays,
-      gender: gender
+      gender: gender,
+      about: about
     }
     if (name === "") {
 
@@ -162,7 +162,7 @@ export class AddDoctor extends Component {
     }
 
 
-    axios.post("http://localhost:8484/Doctors/", doctorObj)
+    axios.post("https://dark-pink-quail-hose.cyclic.app/Doctors/", doctorObj)
       .then(() => {
         window.alert("New Doctor added sucessfully")
         window.location.replace('/admin/doctorslist');
@@ -217,7 +217,7 @@ export class AddDoctor extends Component {
 
                       </div>
                       <div className="col-md-5 m-2">
-                        <label > Email Id<sup>*</sup> :</label>
+                        <label> Email Id<sup>*</sup> :</label>
                         <input type="email" name="email" className="form-control" onChange={(e) => this.inputChangeHandler(e)}
                           placeholder="test111@test.com / test@test.com" ></input>
                         <div onChange={() => this.conditionalchange()}>
@@ -228,7 +228,7 @@ export class AddDoctor extends Component {
 
                       </div>
                       <div className="col-md-5 m-2">
-                        <label >Contact Number<small>(10 Digits)</small><sup>*</sup> :</label>
+                        <label>Contact Number<small>(10 Digits)</small><sup>*</sup> :</label>
                         <input type="text" name="contact" className="form-control" onChange={(e) => this.inputChangeHandler(e)}
                           placeholder="Enter..."  ></input>
                         <div onChange={() => this.conditionalchange()}>
@@ -239,9 +239,8 @@ export class AddDoctor extends Component {
 
                       </div>
                       <div className="col-md-5 m-2">
-                        <label > Qualification<small>(Seperate by comma)</small><sup>*</sup> : </label>
-                        <input type="text" name="qualification" className="form-control"
-                          onChange={(e) => this.inputChangeHandler(e)} placeholder="Enter..."  ></input>
+                        <label> Qualification<small>(Seperate by comma)</small><sup>*</sup> : </label>
+                        <input type="text" name="qualification" className="form-control" onChange={(e) => this.inputChangeHandler(e)} placeholder="Enter..."  ></input>
 
                         <div onChange={() => this.conditionalchange()}>
                           <strong style={{ color: "red" }}>
@@ -275,15 +274,10 @@ export class AddDoctor extends Component {
                             {this.state.exprror} <br />
                             {this.state.exerror}</strong>
                         </div>
-
                       </div>
 
-
-
-
-
                       <div className="col-md-5 m-2">
-                        <label >Centre<sup>*</sup> :</label>
+                        <label>Centre<sup>*</sup> :</label>
                         <select name="centre" onChange={(e) => this.inputChangeHandler(e)} className="form-control" >
                           {/* {
                             this.Centres?.map((data) => {
@@ -318,12 +312,10 @@ export class AddDoctor extends Component {
                             {this.state.opdtoerror}
                           </strong>
                         </div>
-
-
                       </div>
 
                       <div className="col-md-5 m-2">
-                        <label >OPD Days <small>(eg.Mon) Seperate by comma</small><sup>*</sup>:</label>
+                        <label>OPD Days <small>(eg.Mon) Seperate by comma</small><sup>*</sup>:</label>
                         <input type="text" name="OPDdays" className="form-control" onChange={(e) => this.inputChangeHandler(e)}
                           placeholder="Enter..."  ></input>
                         <div onChange={() => this.conditionalchange()}>
@@ -331,14 +323,12 @@ export class AddDoctor extends Component {
                             {this.state.dayserror}
                           </strong>
                         </div>
-
-
                       </div>
 
 
 
                       <div className="col-md-5 m-2">
-                        <label >Gender<sup>*</sup> :</label><br />
+                        <label>Gender<sup>*</sup> :</label><br />
                         <input type="radio" name="gender" onChange={(e) => this.inputChangeHandler(e)} value="Male" ></input> Male
                         <input type="radio" name="gender" onChange={(e) => this.inputChangeHandler(e)} value="Female"></input> Female
 
@@ -351,24 +341,19 @@ export class AddDoctor extends Component {
 
                       <div className="col-md-10 m-2">
                         <label > About Doctor<sup>*</sup> :</label>
-                        <textarea name="about" className="form-control" onChange={(e) => this.inputChangeHandler(e)} placeholder="Enter..."
-                        >
+                        <textarea name="about" className="form-control" onChange={(e) => this.inputChangeHandler(e)} placeholder="Enter...">
                         </textarea>
                         <div onChange={() => this.conditionalchange()}>
                           <strong style={{ color: "red" }}>
                             {this.state.abterror}
                           </strong>
                         </div>
-
                       </div>
 
 
                       <div className="col-md-5 m-2">
-                        <button className="btn btn-secondary" type="submit">
-                          Submit</button>
+                        <button className="btn btn-secondary" type="submit"> Submit</button>
                       </div>
-
-
                     </div>
                   </form>
                 </div>

@@ -122,9 +122,9 @@ class BoonAnAppointment extends Component {
       return false;
     }
 
-    axios.post("http://localhost:8484/Appointments/", appointmentObj)
+    axios.post("https://dark-pink-quail-hose.cyclic.app/Appointments/", appointmentObj)
       .then(() => {
-        window.alert("Data added sucessfully")
+        window.alert("Appointment booked sucessfully")
         window.location.replace('/home');
       })
       .catch((e) => {

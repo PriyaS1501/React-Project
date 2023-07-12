@@ -29,10 +29,10 @@ class OurDoctors extends Component {
   }
 
   fetchData = () => {
-    axios.get("http://localhost:8484/Doctors")
+    axios.get("https://dark-pink-quail-hose.cyclic.app/Doctors")
       .then((res) => {
-        console.log(res.data)
-        this.setState({ Doctors: res.data })
+        // console.log(res.data)
+        this.setState({ Doctors: res.data.data })
       })
       .catch((err) => {
         console.log(err)
